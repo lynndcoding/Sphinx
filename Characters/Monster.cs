@@ -60,8 +60,6 @@ namespace Characters
                 $"Block: {Block}\n");
         }
 
-        /*Add comments here*/
-
         //Override the base functionality for calcDamage() to use the MinDamage and MaxDamage properties from this class
         public override int CalcDamage()
         {
