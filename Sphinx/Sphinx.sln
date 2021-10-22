@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.1705
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sphinx", "Sphinx.csproj", "{109ED62F-7B4C-4ACE-814A-E79B5D919FDC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Characters", "..\Characters\Characters.csproj", "{73B2E15C-9A09-4110-8936-30623C6ADB23}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{109ED62F-7B4C-4ACE-814A-E79B5D919FDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{109ED62F-7B4C-4ACE-814A-E79B5D919FDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{109ED62F-7B4C-4ACE-814A-E79B5D919FDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73B2E15C-9A09-4110-8936-30623C6ADB23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73B2E15C-9A09-4110-8936-30623C6ADB23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73B2E15C-9A09-4110-8936-30623C6ADB23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73B2E15C-9A09-4110-8936-30623C6ADB23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
