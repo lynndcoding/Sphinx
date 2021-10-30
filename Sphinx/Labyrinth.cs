@@ -223,7 +223,7 @@ namespace Labyrinth
                             break;
                         case ConsoleKey.X:
                         case ConsoleKey.E:
-                            Console.WriteLine("No one likes a quitter....");
+                            Console.WriteLine("No one likes a quitter. Safe journeys my friend...");
                             exit = true;
                             break;
                         default:
