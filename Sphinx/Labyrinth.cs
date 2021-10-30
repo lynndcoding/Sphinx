@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Characters;
 
 namespace Sphinx
 {
@@ -22,7 +23,7 @@ namespace Sphinx
                 //Instantiate a player >>Because player class includes "weapon", must instantiate equipped weapon for player first
                 Armory armory = new Armory(3, Weapon.Longsword, 2, 1);
                 //public Player(string name, int hitChance, int block, int life, int maxLife, Race charRace, Armory armedWeapon)
-                Player player = new Player("Indiana Jones", 1, 1, 10, 10, Race.Orc, armory);
+                Player player = new Player("Indiana Jones", 1, 1, 10, 20, Race.Orc, armory);
 
                 bool exit = false;
                 //Loop for the environment
