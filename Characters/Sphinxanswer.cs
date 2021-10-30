@@ -27,7 +27,7 @@ namespace Characters
         //method
         private static string[] GetAnswer()
         {
-            string[] riddle = new string[21];
+            string[] riddle = new string[22];//declare array to hold questions from Sphinx monster
             {
                 riddle[0] = "I am the beginning of everything, the end of everywhere.I’m the beginning of eternity, the end of time and space. What am I?";
                 riddle[1] = "Forward I am heavy, but backward I am not. What am I?";
@@ -50,9 +50,10 @@ namespace Characters
                 riddle[18] = "What can run but never walks, has a mouth but never talks, has a head but never weeps, has a bed but never sleeps?";
                 riddle[19] = "What can fill a room but takes up no space?";
                 riddle[20] = "What is the answer to the Ultimate Question of Life, the Universe, and Everything?";
+                riddle[21] = "What goes on four feet in the morning, two feet at noon, and three feet in the evening?";
             };
 
-            string[] answerSphinx = new string[21];
+            string[] answerSphinx = new string[22];//declare array to hold answers to questions from Sphinx monster
             {
                 answerSphinx[0] = "e";
                 answerSphinx[1] = "ton";
@@ -65,7 +66,7 @@ namespace Characters
                 answerSphinx[8] = "table";
                 answerSphinx[9] = "bed";
                 answerSphinx[10] = "cold";
-                answerSphinx[11] = "7";
+                answerSphinx[11] = "seven";
                 answerSphinx[12] = "9";
                 answerSphinx[13] = "short";
                 answerSphinx[14] = "r";
@@ -75,11 +76,12 @@ namespace Characters
                 answerSphinx[18] = "river";
                 answerSphinx[19] = "light";
                 answerSphinx[20] = "42";
+                answerSphinx[21] = "person";
             };
-            Random rand = new Random();
-            int index = rand.Next(answerSphinx.Length);
-            string[] answerAndSolution = { riddle[index], answerSphinx[index] };
-            return answerAndSolution;
+            Random rand = new Random(); //create a random number generator
+            int index = rand.Next(answerSphinx.Length); //set an index value equal to the length of the array to loop through randomly
+            string[] answerAndSolution = { riddle[index], answerSphinx[index] };//create a string to hold both the riddle and the answer - linked by the index (both have same number of values in each array)
+            return answerAndSolution; // return string that holds the answer and the solution
         }//end method answerSphinx
 
     }//end class

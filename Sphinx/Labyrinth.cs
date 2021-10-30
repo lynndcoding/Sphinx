@@ -11,29 +11,106 @@ namespace Labyrinth
     {
         static void Main(string[] args)
         {
+            Console.Title = "Secret Labyrinth of the Delphian Sphinx"; //Title for Console
+
             int score = 0; //Declare and initiate variable to keep score for user
             int correctRiddle = 0;//Decalre and initiate varible to keep track of correctly answered riddles
-            int wrongRiddle = 0;//Decalre and initiate varible to keep track of incorrectly answered riddles
+            int wrongRiddle = 0;//Declare and initiate varible to keep track of incorrectly answered riddles
 
+            Console.WriteLine($"Adventurer you are about to enter the Secret Labyrinth of the Delphian Sphinx. \nGather your wits, your courage and your weapon!");//Welcome the user to the game
+
+            ////Allow user to select public Weapon WeaponType
+            //Console.WriteLine("What Weapon would you like to arm yourself with while facing the untold dangers within the labyrinth?");
+            //string userArms = Console.ReadLine(); // Read user's response
             //Instantiate a player >>Because player class includes "weapon", must instantiate equipped weapon for player first
+
+            //Loop for the User menu
+            bool x = false; // Boolean to control loop execution
+
+            Console.WriteLine("------------------------------------");
+            Console.WriteLine("\nWhat Weapon would you like to arm yourself with while facing the perils of the mysterious labyrinth?" +
+                "L) Longsword\n" +
+                "K) Knife\n" +
+                "D) Dagger\n" +
+                "S) Spear\n" +
+                "B) Bluntstave\n" +
+                "P) Polearm\n" +
+                "A) Axe\n" +
+                "T) Throwingstar" +
+                "G) Dartgun" +
+                "J) Javelin");
+            Console.WriteLine("------------------------------------");
+            ConsoleKey userWpn = Console.ReadKey(true).Key; //Capture user choice
+
+            Weapon selectedWeapon = Weapon.Longsword;//Declare variable to hold default weapon from the armory
+
+            switch (userWpn) //switch method that reads keys input from user 
+            {
+                case ConsoleKey.L:
+                    selectedWeapon = Weapon.Longsword;
+                    Console.WriteLine($"A { selectedWeapon} is a good choice for the perils that lie ahead of you");
+                    break;
+                case ConsoleKey.K:
+                    selectedWeapon = Weapon.Knife;
+                    Console.WriteLine($"A { selectedWeapon} is a good choice for the perils that lie ahead of you");
+                    break;
+                case ConsoleKey.D:
+                    selectedWeapon = Weapon.Dagger;
+                    Console.WriteLine($"A { selectedWeapon} is a good choice for the perils that lie ahead of you");
+                    break;
+                case ConsoleKey.S:
+                    selectedWeapon = Weapon.Spear;
+                    Console.WriteLine($"A { selectedWeapon} is a good choice for the perils that lie ahead of you");
+                    break;
+                case ConsoleKey.B:
+                    selectedWeapon = Weapon.Bluntstave;
+                    Console.WriteLine($"A { selectedWeapon} is a good choice for the perils that lie ahead of you");
+                    break;
+                case ConsoleKey.P:
+                    selectedWeapon = Weapon.Polearm;
+                    Console.WriteLine($"A { selectedWeapon} is a good choice for the perils that lie ahead of you");
+                    break;
+                case ConsoleKey.A:
+                    selectedWeapon = Weapon.Axe;
+                    Console.WriteLine($"A { selectedWeapon} is a good choice for the perils that lie ahead of you");
+                    break;
+                case ConsoleKey.T:
+                    selectedWeapon = Weapon.Throwingstar;
+                    Console.WriteLine($"A { selectedWeapon} is a good choice for the perils that lie ahead of you");
+                    break;
+                case ConsoleKey.G:
+                    selectedWeapon = Weapon.Dartgun;
+                    Console.WriteLine($"A { selectedWeapon} is a good choice for the perils that lie ahead of you");
+                    break;
+                case ConsoleKey.J:
+                    selectedWeapon = Weapon.Javelin;
+                    Console.WriteLine($"A { selectedWeapon} is a good choice for the perils that lie ahead of you");
+                    break;
+                default:
+                    Console.WriteLine("Input not recognized. Please choose a valid option from the menu...");
+                    break;
+            }
+
+            Random random = new Random(); //Declare Random to use for 
+            //properties on the Armory obj
+
+            //getting random values for min/maxDestruction and bonusHitChance
+            int maxDestruction = random.Next(1, 10);
+            int minDestruction = random.Next(1, maxDestruction + 1); //min is always less than max 
+            int bonusHitChance = random.Next(1, 5);
+
             //ctor = public Armory(int maxDestruction, Weapon weaponType, int bonusHitChance, int minDestruction)
-            Armory armory = new Armory(7, Weapon.Longsword, 2, 5);
+            Console.Clear();
+
+            Armory armory = new Armory(maxDestruction, selectedWeapon, bonusHitChance, minDestruction);
             //ctor = public Player(string name, int hitChance, int block, int life, int maxLife, Race charRace, Armory armedWeapon)
             Player player = new Player(" ", 25, 5, 10, 25, Race.Orc, armory);
 
-            Console.Title = "Secret Labyrinth of the Delphian Sphinx"; //Title for Console
             Console.WriteLine("What is your name Adventurer?"); //Ask user for their name
             string userName = Console.ReadLine(); // Read user's response
             player.Name = userName; // Reassign user's response userName as Name variable inside Player class
             Console.Clear(); // Clear Console of all text
-            Console.WriteLine($"{player.Name}: you are about to enter the Secret Labyrinth of the Delphian Sphinx. \nGather your wits, your courage and your weapon! \nYour Perilous Journey Begins...\n\n");
-
-            //Allow user to select public Weapon WeaponType
-            Console.WriteLine("What Weapon would you like to arm yourself with while facing the perils of the labyrinth?");
-            string userArms = Console.ReadLine(); // Read user's response
-            userArms = armory.WeaponType.ToString();// Reassign user's response userArms as Weapon variable inside Armory class
-            Console.Clear(); // Clear Console of all text
-            Console.WriteLine($"{armory.WeaponType}:");
+            Console.WriteLine($"{player.Name}: Your Perilous Journey Begins...\n\n");
 
             //switch (userEntry)
             //{
