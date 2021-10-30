@@ -15,6 +15,7 @@ namespace Characters
         public Race CharRace { get; set; } // calling from enum Race 
 
         public Armory ArmedWeapon { get; set; } // calling from Class Armory referencing enum Weapon
+        public static object charRace { get; set; }
 
         //ctor
         public Player(string name, int hitChance, int block, int life, int maxLife, Race charRace, Armory armedWeapon)
@@ -31,58 +32,58 @@ namespace Characters
             switch (CharRace)
             {
                 case Race.Orc:
-                    MaxLife += 10;
+                    /*MaxLife += 10;*/
                     HitChance += 7;
                     Block += 5;
-                    Life += 10;
+                    /*Life += 10;*/
                     break;
                 case Race.Elf:
-                    MaxLife += 10;
+                    /*MaxLife += 10;*/
                     HitChance += 7;
                     Block += 5;
-                    Life += 10;
+                    /*Life += 10;*/
                     break;
                 case Race.Human:
-                    MaxLife += 10;
+                    /*MaxLife += 10;*/
                     HitChance += 7;
                     Block += 5;
-                    Life += 10;
+                    /*Life += 10;*/
                     break;
                 case Race.Gnome:
-                    MaxLife += 10;
+                    /*MaxLife += 10;*/
                     HitChance += 7;
                     Block += 5;
-                    Life += 10;
+                    /*Life += 10;*/
                     break;
                 case Race.Dwarf:
-                    MaxLife += 10;
+                    /*MaxLife += 10;*/
                     HitChance += 7;
                     Block += 5;
-                    Life += 10;
+                    /*Life += 10;*/
                     break;
                 case Race.DragonBorn:
-                    MaxLife += 10;
+                    /*MaxLife += 10;*/
                     HitChance += 7;
                     Block += 5;
-                    Life += 10;
+                    /*Life += 10;*/
                     break;
                 case Race.Troll:
-                    MaxLife += 10;
+                    /*MaxLife += 10;*/
                     HitChance += 7;
                     Block += 5;
-                    Life += 10;
+                    /*Life += 10;*/
                     break;
                 case Race.DarkElf:
-                    MaxLife += 10;
+                    /*MaxLife += 10;*/
                     HitChance += 7;
                     Block += 5;
-                    Life += 10;
+                    /*Life += 10;*/
                     break;
                 case Race.Narwhal:
-                    MaxLife += 10;
+                    /*MaxLife += 10;*/
                     HitChance += 7;
                     Block += 5;
-                    Life += 10;
+                    /*Life += 10;*/
                     break;
             }//end switch CharacterRace Hitchance
         }//end ctor
