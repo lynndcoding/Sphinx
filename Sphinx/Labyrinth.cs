@@ -110,7 +110,6 @@ namespace Labyrinth
                         loadmenu = false;
                         break;
                 }//end switch
-                //loadmenu = false;
             } while (!loadmenu); //end do while
 
             Random random = new Random(); //Declare Random to use for 
@@ -129,7 +128,82 @@ namespace Labyrinth
             Console.WriteLine(armory);
             //TODO: Add functionality for player to choose their race
 
-            Player player = new Player(" ", 25, 5, 10, 25, Race.Orc, armory);
+            Player player = new Player(" ", 25, 5, 10, 25, Race.Orc, armory);//Declare & Initialize default player and race
+
+            bool menurace = false; //bool to run the switch & break out when user selects option
+            do
+            {
+                Console.WriteLine("------------------------------------");
+                Console.WriteLine("\nWhat race will you be \nwhile facing the perils of the mysterious labyrinth?\n\n" +
+                    "O) Orc\n" +
+                    "E) Elf\n" +
+                    "H) Human\n" +
+                    "G) Gnome\n" +
+                    "D) Dwarf\n" +
+                    "B) DragonBorn\n" +
+                    "T) Troll\n" +
+                    "K) DarkElf" +
+                    "N) Narwhal");
+                Console.WriteLine("------------------------------------");
+                ConsoleKey userrace = Console.ReadKey(true).Key; //Capture user choice
+                switch (userrace) //switch method that reads keys input from user 
+                {
+                    case ConsoleKey.O:
+                        player.CharRace = Race.Orc;
+                        Console.Clear(); // Clear Console of all text
+                        Console.WriteLine(player);
+                        loadmenu = true;
+                        break;
+                    case ConsoleKey.E:
+                        player.CharRace = Race.Elf;
+                        Console.Clear(); // Clear Console of all text
+                        Console.WriteLine(player);
+                        loadmenu = true;
+                        break;
+                    case ConsoleKey.H:
+                        player.CharRace = Race.Human;
+                        Console.Clear(); // Clear Console of all text
+                        Console.WriteLine(player);
+                        loadmenu = true;
+                        break;
+                    case ConsoleKey.G:
+                        player.CharRace = Race.Gnome;
+                        Console.Clear(); // Clear Console of all text
+                        Console.WriteLine(player);
+                        loadmenu = true;
+                        break;
+                    case ConsoleKey.D:
+                        player.CharRace = Race.Dwarf;
+                        Console.Clear(); // Clear Console of all text
+                        Console.WriteLine(player);
+                        loadmenu = true;
+                        break;
+                    case ConsoleKey.B:
+                        player.CharRace = Race.DragonBorn;
+                        Console.Clear(); // Clear Console of all text
+                        Console.WriteLine(player);
+                        loadmenu = true;
+                        break;
+                    case ConsoleKey.T:
+                        player.CharRace = Race.Troll;
+                        Console.Clear(); // Clear Console of all text
+                        Console.WriteLine(player);
+                        loadmenu = true;
+                        break;
+                    case ConsoleKey.K:
+                        player.CharRace = Race.DarkElf;
+                        Console.Clear(); // Clear Console of all text
+                        Console.WriteLine(player);
+                        loadmenu = true;
+                        break;
+                    default:
+                        Console.Clear(); // Clear Console of all text
+                        Console.WriteLine(player);
+                        loadmenu = false;
+                        break;
+                }//end switch
+            } while (!loadmenu); //end do while
+
 
             Console.WriteLine("What is your name Adventurer?"); //Ask user for their name
             string userName = Console.ReadLine(); // Read user's response

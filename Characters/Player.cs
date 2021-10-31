@@ -32,58 +32,57 @@ namespace Characters
             switch (CharRace)
             {
                 case Race.Orc:
-                    MaxLife += 10;
-                    HitChance += 7;
+                    MaxLife += 5;
+                    HitChance += 3;
                     Block += 5;
-                    Life += 10;
                     break;
                 case Race.Elf:
                     MaxLife += 10;
-                    HitChance += 7;
+                    HitChance += 10;
                     Block += 5;
                     Life += 10;
                     break;
                 case Race.Human:
-                    MaxLife += 10;
-                    HitChance += 7;
-                    Block += 5;
-                    Life += 10;
+                    MaxLife += 5;
+                    HitChance += 5;
+                    Block += 3;
+                    Life += 5;
                     break;
                 case Race.Gnome:
-                    MaxLife += 10;
+                    MaxLife += 7;
                     HitChance += 7;
-                    Block += 5;
+                    Block += 8;
                     Life += 10;
                     break;
                 case Race.Dwarf:
-                    MaxLife += 10;
-                    HitChance += 7;
-                    Block += 5;
-                    Life += 10;
+                    MaxLife += 15;
+                    HitChance += 15;
+                    Block += 10;
+                    Life += 15;
                     break;
                 case Race.DragonBorn:
-                    MaxLife += 10;
-                    HitChance += 7;
-                    Block += 5;
-                    Life += 10;
+                    MaxLife += 20;
+                    HitChance += 15;
+                    Block += 10;
+                    Life += 15;
                     break;
                 case Race.Troll:
-                    MaxLife += 10;
-                    HitChance += 7;
-                    Block += 5;
+                    MaxLife += 5;
+                    HitChance += 9;
+                    Block += 10;
                     Life += 10;
                     break;
                 case Race.DarkElf:
                     MaxLife += 10;
-                    HitChance += 7;
-                    Block += 5;
+                    HitChance += 10;
+                    Block += 15;
                     Life += 10;
                     break;
                 case Race.Narwhal:
-                    MaxLife += 10;
-                    HitChance += 7;
-                    Block += 5;
-                    Life += 10;
+                    MaxLife += 20;
+                    HitChance += 20;
+                    Block += 20;
+                    Life += 20;
                     break;
             }//end switch CharacterRace Hitchance
         }//end ctor
