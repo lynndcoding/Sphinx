@@ -14,21 +14,17 @@ namespace Labyrinth
             Console.Title = "Secret Labyrinth of the Delphian Sphinx"; //Title for Console
 
             int score = 0; //Declare and initiate variable to keep score for user
-            int correctRiddle = 0;//Decalre and initiate varible to keep track of correctly answered riddles
+            int correctRiddle = 0;//Declare and initiate varible to keep track of correctly answered riddles
             int wrongRiddle = 0;//Declare and initiate varible to keep track of incorrectly answered riddles
+            Console.ForegroundColor = ConsoleColor.Red;//change text color in console to red
+            Console.WriteLine($"Adventurer you are about to enter the Secret Labyrinth of the Delphian Sphinx.\nIt is rumored that the Sphinx can answer the questions of the universe\nand may appear and grant favor upon the true of heart when summoned. \nLegends also say the Sphinx is a merciless beast \nthat will kill and eat those who cannot answer its riddle.\nGather your wits, your courage and your weapon!\n\n");//Welcome the user to the game
+            Console.ResetColor();//reset text color in console
 
-            Console.WriteLine($"Adventurer you are about to enter the Secret Labyrinth of the Delphian Sphinx. \nGather your wits, your courage and your weapon!");//Welcome the user to the game
-
-            ////Allow user to select public Weapon WeaponType
-            //Console.WriteLine("What Weapon would you like to arm yourself with while facing the untold dangers within the labyrinth?");
-            //string userArms = Console.ReadLine(); // Read user's response
             //Instantiate a player >>Because player class includes "weapon", must instantiate equipped weapon for player first
-
-            //Loop for the User menu
-            bool x = false; // Boolean to control loop execution
+            ////Allow user to select public Weapon WeaponType
 
             Console.WriteLine("------------------------------------");
-            Console.WriteLine("\nWhat Weapon would you like to arm yourself with while facing the perils of the mysterious labyrinth?" +
+            Console.WriteLine("\nWhat Weapon would you like to arm yourself with \nwhile facing the perils of the mysterious labyrinth? Choose your weapon wisely!\n\n" +
                 "L) Longsword\n" +
                 "K) Knife\n" +
                 "D) Dagger\n" +
@@ -36,13 +32,17 @@ namespace Labyrinth
                 "B) Bluntstave\n" +
                 "P) Polearm\n" +
                 "A) Axe\n" +
-                "T) Throwingstar" +
-                "G) Dartgun" +
-                "J) Javelin");
+                "T) Throwingstar\n" +
+                "G) Dartgun\n" +
+                "J) Javelin\n");
             Console.WriteLine("------------------------------------");
             ConsoleKey userWpn = Console.ReadKey(true).Key; //Capture user choice
 
             Weapon selectedWeapon = Weapon.Longsword;//Declare variable to hold default weapon from the armory
+
+            //Loop for the User menu
+            bool x = false; // Boolean to control loop execution
+            //TODO:   Wrap switch in a loop to reload menu in event user answers incorrectly & break out when executed correctly
 
             switch (userWpn) //switch method that reads keys input from user 
             {
@@ -99,8 +99,7 @@ namespace Labyrinth
             int minDestruction = random.Next(1, maxDestruction + 1); //min is always less than max 
             int bonusHitChance = random.Next(1, 5);
 
-            //ctor = public Armory(int maxDestruction, Weapon weaponType, int bonusHitChance, int minDestruction)
-            Console.Clear();
+            //NOTE: ctor = public Armory(int maxDestruction, Weapon weaponType, int bonusHitChance, int minDestruction)
 
             Armory armory = new Armory(maxDestruction, selectedWeapon, bonusHitChance, minDestruction);
             //ctor = public Player(string name, int hitChance, int block, int life, int maxLife, Race charRace, Armory armedWeapon)
@@ -111,66 +110,6 @@ namespace Labyrinth
             player.Name = userName; // Reassign user's response userName as Name variable inside Player class
             Console.Clear(); // Clear Console of all text
             Console.WriteLine($"{player.Name}: Your Perilous Journey Begins...\n\n");
-
-            //switch (userEntry)
-            //{
-            //    case ConsoleKey.Y:
-            //        Console.ForegroundColor = ConsoleColor.DarkCyan;
-            //        Console.WriteLine("Here is your riddle then. Think about it and answer carefully...");
-            //        Console.WriteLine(sphinx.Riddle);
-            //        Console.ResetColor();
-            //        //Capture user Answer to Riddle
-            //        Console.ForegroundColor = ConsoleColor.DarkYellow;
-            //        string userAnswer = Console.ReadLine().ToLower();
-            //        Console.ResetColor();
-            //        //TODO: Compare user Answer to correct Answer from SphinxAnswer.cs
-            //        if (userAnswer == sphinx.Answer.ToLower())
-            //        {
-            //            //If correct Answer - award User +2 Life Points and kick user out of room
-            //            Console.WriteLine("Congratulations! You have solved the riddle of the Sphinx! You have been awarded additional life. Continue on your journey worthy adversary...");
-            //            reload = true; // load a new room 
-            //            player.Life += 1; //increase player.Life by 1 as reward for answering question
-            //            correctRiddle++; // keep track of riddles answered correctly
-            //            Console.ForegroundColor = ConsoleColor.DarkBlue;
-            //            Console.WriteLine("You are not sure how you left the room with the Sphinx, it was like you materialized somewhere else magically only to be confronted with another door...");
-            //            Console.ResetColor();
-            //        }
-            //        else
-            //        {
-            //            //If incorrect Answer - Sphinx takes free attack and kick user out of room
-            //            Console.WriteLine("You have failed to solve the riddle of the Sphinx! You have had some of your life points removed for your insolence! You are not worthy to continue...");
-            //            Console.WriteLine($"{monster.Name} attacks you as you flee!");
-            //            Combat.DoAttack(monster, player);
-            //            player.Life -= 1;
-            //            wrongRiddle++;
-            //            reload = true; // load a new room 
-            //        }
-            //        break;
-            //    case ConsoleKey.N:
-            //        Console.WriteLine("Not everyone is up to the challenge of the Sphinx. Your journey continues...");
-            //        score++;
-            //        reload = true;
-            //        break;
-            //    default:
-            //        Console.WriteLine("Input not recognized. Please choose a valid option from the menu...");
-            //        break;
-            //}
-            //break;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             bool exit = false;
             //Loop for the environment
@@ -202,7 +141,7 @@ namespace Labyrinth
                 {
                     Console.WriteLine("------------------------------------");
                     Console.WriteLine("\nPlease carefully choose your next course of action: \n\n" +
-                        "S) Face the Sphinx\n" +//Answer riddle correctly for extra life
+                        "S) Summon the Sphinx\n" +//Answer riddle correctly for extra life
                         "A) Attack Monster\n" +
                         "F) Flee to Safety\n" +
                         "P) Player Info\n" +
@@ -251,7 +190,7 @@ namespace Labyrinth
                                     {
                                         //If incorrect Answer - Sphinx takes free attack and kick user out of room
                                         Console.ForegroundColor = ConsoleColor.Red;
-                                        Console.WriteLine("The Sphinx rears up on its back legs and growls at you!!\n It spews fire from three of its heads and bellows \nloudly ''You have failed to solve the riddle of the Sphinx!'' \nYou have had some of your life points removed for your insolence! \nYou are not worthy to continue...");
+                                        Console.WriteLine("The Sphinx suddenly rears up on its back legs and growls at you!!\nIt spews fire from three of its heads and bellows \nloudly ''You have failed to solve the riddle of the Sphinx!'' \nYou have had some of your life points removed for your insolence! \nYou are not worthy to continue...");
                                         Console.ResetColor();
                                         Console.WriteLine($"The Sphinx and {monster.Name} both attack you as you flee!");
                                         Combat.DoAttack(monster, player);
