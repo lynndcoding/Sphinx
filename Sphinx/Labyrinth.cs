@@ -22,77 +22,99 @@ namespace Labyrinth
 
             //Instantiate a player >>Because player class includes "weapon", must instantiate equipped weapon for player first
             ////Allow user to select public Weapon WeaponType
-
-            Console.WriteLine("------------------------------------");
-            Console.WriteLine("\nWhat Weapon would you like to arm yourself with \nwhile facing the perils of the mysterious labyrinth? Choose your weapon wisely!\n\n" +
-                "L) Longsword\n" +
-                "K) Knife\n" +
-                "D) Dagger\n" +
-                "S) Spear\n" +
-                "B) Bluntstave\n" +
-                "P) Polearm\n" +
-                "A) Axe\n" +
-                "T) Throwingstar\n" +
-                "G) Dartgun\n" +
-                "J) Javelin\n");
-            Console.WriteLine("------------------------------------");
-            ConsoleKey userWpn = Console.ReadKey(true).Key; //Capture user choice
-
             Weapon selectedWeapon = Weapon.Longsword;//Declare variable to hold default weapon from the armory
-
             //Loop for the User menu
-            bool x = false; // Boolean to control loop execution
-            //TODO:   Wrap switch in a loop to reload menu in event user answers incorrectly & break out when executed correctly
 
-            switch (userWpn) //switch method that reads keys input from user 
+            bool loadmenu = false; //bool to run the switch & break out when user selects option
+            do
             {
-                case ConsoleKey.L:
-                    selectedWeapon = Weapon.Longsword;
-                    Console.WriteLine($"A { selectedWeapon} is a good choice for the perils that lie ahead of you");
-                    break;
-                case ConsoleKey.K:
-                    selectedWeapon = Weapon.Knife;
-                    Console.WriteLine($"A { selectedWeapon} is a good choice for the perils that lie ahead of you");
-                    break;
-                case ConsoleKey.D:
-                    selectedWeapon = Weapon.Dagger;
-                    Console.WriteLine($"A { selectedWeapon} is a good choice for the perils that lie ahead of you");
-                    break;
-                case ConsoleKey.S:
-                    selectedWeapon = Weapon.Spear;
-                    Console.WriteLine($"A { selectedWeapon} is a good choice for the perils that lie ahead of you");
-                    break;
-                case ConsoleKey.B:
-                    selectedWeapon = Weapon.Bluntstave;
-                    Console.WriteLine($"A { selectedWeapon} is a good choice for the perils that lie ahead of you");
-                    break;
-                case ConsoleKey.P:
-                    selectedWeapon = Weapon.Polearm;
-                    Console.WriteLine($"A { selectedWeapon} is a good choice for the perils that lie ahead of you");
-                    break;
-                case ConsoleKey.A:
-                    selectedWeapon = Weapon.Axe;
-                    Console.WriteLine($"A { selectedWeapon} is a good choice for the perils that lie ahead of you");
-                    break;
-                case ConsoleKey.T:
-                    selectedWeapon = Weapon.Throwingstar;
-                    Console.WriteLine($"A { selectedWeapon} is a good choice for the perils that lie ahead of you");
-                    break;
-                case ConsoleKey.G:
-                    selectedWeapon = Weapon.Dartgun;
-                    Console.WriteLine($"A { selectedWeapon} is a good choice for the perils that lie ahead of you");
-                    break;
-                case ConsoleKey.J:
-                    selectedWeapon = Weapon.Javelin;
-                    Console.WriteLine($"A { selectedWeapon} is a good choice for the perils that lie ahead of you");
-                    break;
-                default:
-                    Console.WriteLine("Input not recognized. Please choose a valid option from the menu...");
-                    break;
-            }
+                Console.WriteLine("------------------------------------");
+                Console.WriteLine("\nWhat Weapon would you like to arm yourself with \nwhile facing the perils of the mysterious labyrinth? Choose your weapon wisely!\n\n" +
+                    "L) Longsword\n" +
+                    "K) Knife\n" +
+                    "D) Dagger\n" +
+                    "S) Spear\n" +
+                    "B) Bluntstave\n" +
+                    "P) Polearm\n" +
+                    "A) Axe\n" +
+                    "T) Throwingstar\n" +
+                    "G) Dartgun\n" +
+                    "J) Javelin\n");
+                Console.WriteLine("------------------------------------");
+                ConsoleKey userWpn = Console.ReadKey(true).Key; //Capture user choice
+                switch (userWpn) //switch method that reads keys input from user 
+                {
+                    case ConsoleKey.L:
+                        selectedWeapon = Weapon.Longsword;
+                        Console.Clear(); // Clear Console of all text
+                        Console.WriteLine($"A { selectedWeapon} is a good choice for the perils that lie ahead of you");
+                        loadmenu = true;
+                        break;
+                    case ConsoleKey.K:
+                        selectedWeapon = Weapon.Knife;
+                        Console.Clear(); // Clear Console of all text
+                        Console.WriteLine($"A { selectedWeapon} is a good choice for the perils that lie ahead of you");
+                        loadmenu = true;
+                        break;
+                    case ConsoleKey.D:
+                        selectedWeapon = Weapon.Dagger;
+                        Console.Clear(); // Clear Console of all text
+                        Console.WriteLine($"A { selectedWeapon} is a good choice for the perils that lie ahead of you");
+                        loadmenu = true;
+                        break;
+                    case ConsoleKey.S:
+                        selectedWeapon = Weapon.Spear;
+                        Console.Clear(); // Clear Console of all text
+                        Console.WriteLine($"A { selectedWeapon} is an interesting choice for the perils that lie ahead of you");
+                        loadmenu = true;
+                        break;
+                    case ConsoleKey.B:
+                        selectedWeapon = Weapon.Bluntstave;
+                        Console.Clear(); // Clear Console of all text
+                        Console.WriteLine($"A { selectedWeapon} is an interesting choice for the perils that lie ahead of you");
+                        loadmenu = true;
+                        break;
+                    case ConsoleKey.P:
+                        selectedWeapon = Weapon.Polearm;
+                        Console.Clear(); // Clear Console of all text
+                        Console.WriteLine($"A { selectedWeapon} will serve you well for the perils that lie ahead of you");
+                        loadmenu = true;
+                        break;
+                    case ConsoleKey.A:
+                        selectedWeapon = Weapon.Axe;
+                        Console.Clear(); // Clear Console of all text
+                        Console.WriteLine($"You have chosen an { selectedWeapon} for the perils that lie ahead of you");
+                        loadmenu = true;
+                        break;
+                    case ConsoleKey.T:
+                        selectedWeapon = Weapon.Throwingstar;
+                        Console.Clear(); // Clear Console of all text
+                        Console.WriteLine($"A { selectedWeapon} is one way to go. \nIt may not serve you well for the perils that lie ahead of you");
+                        loadmenu = true;
+                        break;
+                    case ConsoleKey.G:
+                        selectedWeapon = Weapon.Dartgun;
+                        Console.Clear(); // Clear Console of all text
+                        Console.WriteLine($"A { selectedWeapon} is an interesting choice for the perils \nthat lie ahead of you. Good luck with the dragon!");
+                        loadmenu = true;
+                        break;
+                    case ConsoleKey.J:
+                        selectedWeapon = Weapon.Javelin;
+                        Console.Clear(); // Clear Console of all text
+                        Console.WriteLine($"A { selectedWeapon} is a good choice for the perils that lie ahead of you");
+                        loadmenu = true;
+                        break;
+                    default:
+                        Console.Clear(); // Clear Console of all text
+                        Console.WriteLine("Input not recognized. Please choose a valid option from the menu...");
+                        loadmenu = false;
+                        break;
+                }//end switch
+                //loadmenu = false;
+            } while (!loadmenu); //end do while
 
             Random random = new Random(); //Declare Random to use for 
-            //properties on the Armory obj
+                                          //properties on the Armory obj
 
             //getting random values for min/maxDestruction and bonusHitChance
             int maxDestruction = random.Next(1, 10);
@@ -103,6 +125,10 @@ namespace Labyrinth
 
             Armory armory = new Armory(maxDestruction, selectedWeapon, bonusHitChance, minDestruction);
             //ctor = public Player(string name, int hitChance, int block, int life, int maxLife, Race charRace, Armory armedWeapon)
+
+            Console.WriteLine(armory);
+            //TODO: Add functionality for player to choose their race
+
             Player player = new Player(" ", 25, 5, 10, 25, Race.Orc, armory);
 
             Console.WriteLine("What is your name Adventurer?"); //Ask user for their name
@@ -266,6 +292,7 @@ namespace Labyrinth
             Console.WriteLine("You incorrectly answered " + wrongRiddle + " riddle" + (wrongRiddle == 1 ? "." : "s."));
             Console.ResetColor();
         }//end Main()
+
 
         private static string GetRoom()
         {
