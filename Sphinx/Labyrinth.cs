@@ -13,17 +13,49 @@ namespace Labyrinth
         {
             Console.Title = "Secret Labyrinth of the Delphian Sphinx"; //Title for Console
 
+            Console.WriteLine("                               .^^^^^^^^");
+            Console.WriteLine("                             /xXX=====XXXx");
+            Console.WriteLine("               //         , / / _/_/|_/_)");
+            Console.WriteLine("              /';;       /'\'/////.-. .-./");
+            Console.WriteLine("             / /;|      / . ,S'  -   - |");
+            Console.WriteLine("            / -.;|      |'.SS/     =|  ;");
+            Console.WriteLine("           ; '-.;/,     |'-.SS/   __  /S");
+            Console.WriteLine("           |  _ ';//.   /'SSS/________/SS");
+            Console.WriteLine("           |   '-';//. / _SSSS[XXXXXX]SS");
+            Console.WriteLine("           /  '--.';;-.__.=SSS`//  /_SSS");
+            Console.WriteLine("          /   .--'';;'..    =.=.=./././.=/");
+            Console.WriteLine("           `.   .-'` __  _';;/.=.=.=.=.|.=|");
+            Console.WriteLine("             ;-.__-' _'  __.;/=.=.=.=.=.=/ ");
+            Console.WriteLine("     ,     _'     `' =.      ;/.=.=.=.=/ ");
+            Console.WriteLine("     )/.'`  ___     `'__     .;| .=.=.=/");
+            Console.WriteLine("     (_/ .-`   ' .    |      //      /");
+            Console.WriteLine("      ///         / -,|       |.--'  |");
+            Console.WriteLine("     /  /`,       //    /      |  |   |");
+            Console.WriteLine("    ( (__) )    __-'--,  /     |  |   '--,");
+            Console.WriteLine("     ;---'   -'--,__}}}  /    '--,   __}}}");
+            Console.WriteLine("       /________}}}       /____}}}");
+
             int score = 0; //Declare and initiate variable to keep score for user
             int correctRiddle = 0;//Declare and initiate varible to keep track of correctly answered riddles
             int wrongRiddle = 0;//Declare and initiate varible to keep track of incorrectly answered riddles
+            int loot = 0;
             Console.ForegroundColor = ConsoleColor.Red;//change text color in console to red
             Console.WriteLine($"Adventurer you are about to enter the Secret Labyrinth of the Delphian Sphinx.\nIt is rumored that the Sphinx can answer the questions of the universe\nand may appear and grant favor upon the true of heart when summoned. \nLegends also say the Sphinx is a merciless beast \nthat will kill and eat those who cannot answer its riddle.\nGather your wits, your courage and your weapon!\n\n");//Welcome the user to the game
             Console.ResetColor();//reset text color in console
 
+            Console.WriteLine("Are you sure you wish to continue?");
+            ConsoleKey cont = Console.ReadKey(true).Key; //Capture user choice
+            if (cont == ConsoleKey.N)//give user option to leave game
+            {
+                Console.WriteLine("Not everyone is up to the challenge of the Sphinx...");
+                System.Environment.Exit(0);
+            }
+
             //Instantiate a player >>Because player class includes "weapon", must instantiate equipped weapon for player first
             ////Allow user to select public Weapon WeaponType
             Weapon selectedWeapon = Weapon.Longsword;//Declare variable to hold default weapon from the armory
-            //Loop for the User menu
+                                                     //Loop for the User menu
+            Console.Clear(); // Clear Console of all text
 
             bool loadmenu = false; //bool to run the switch & break out when user selects option
             do
@@ -130,7 +162,6 @@ namespace Labyrinth
 
             Player player = new Player(" ", 25, 5, 10, 25, Race.Orc, armory);//Declare & Initialize default player and race
 
-            bool menurace = false; //bool to run the switch & break out when user selects option
             do
             {
                 Console.WriteLine("------------------------------------");
@@ -142,11 +173,11 @@ namespace Labyrinth
                     "D) Dwarf\n" +
                     "B) DragonBorn\n" +
                     "T) Troll\n" +
-                    "K) DarkElf" +
+                    "K) DarkElf\n" +
                     "N) Narwhal");
                 Console.WriteLine("------------------------------------");
-                ConsoleKey userrace = Console.ReadKey(true).Key; //Capture user choice
-                switch (userrace) //switch method that reads keys input from user 
+                ConsoleKey menurace = Console.ReadKey(true).Key; //Capture user choice
+                switch (menurace) //switch method that reads keys input from user 
                 {
                     case ConsoleKey.O:
                         player.CharRace = Race.Orc;
@@ -192,6 +223,12 @@ namespace Labyrinth
                         break;
                     case ConsoleKey.K:
                         player.CharRace = Race.DarkElf;
+                        Console.Clear(); // Clear Console of all text
+                        Console.WriteLine(player);
+                        loadmenu = true;
+                        break;
+                    case ConsoleKey.N:
+                        player.CharRace = Race.Narwhal;
                         Console.Clear(); // Clear Console of all text
                         Console.WriteLine(player);
                         loadmenu = true;
@@ -255,6 +292,27 @@ namespace Labyrinth
                     {
                         case ConsoleKey.S:
                             Console.WriteLine($"A creature with the head of a woman, the haunches of a lion, and the wings of a bird \nmysteriously appears next to the { monster.Name}. \n\n\nA realization comes upon you that you are now facing the mysterious\n and treacherous Sphinx. It is rumored that the Sphinx is merciless, \nand will kill and eat those who cannot answer its riddle.\n\n");
+                            Console.WriteLine("                               .^^^^^^^^");
+                            Console.WriteLine("                             /xXX=====XXXx");
+                            Console.WriteLine("               //         , / / _/_/|_/_)");
+                            Console.WriteLine("              /';;       /'\'/////.-. .-./");
+                            Console.WriteLine("             / /;|      / . ,S'  -   - |");
+                            Console.WriteLine("            / -.;|      |'.SS/     =|  ;");
+                            Console.WriteLine("           ; '-.;/,     |'-.SS/   __  /S");
+                            Console.WriteLine("           |  _ ';//.   /'SSS/________/SS");
+                            Console.WriteLine("           |   '-';//. / _SSSS[XXXXXX]SS");
+                            Console.WriteLine("           /  '--.';;-.__.=SSS`//  /_SSS");
+                            Console.WriteLine("          /   .--'';;'..    =.=.=./././.=/");
+                            Console.WriteLine("           `.   .-'` __  _';;/.=.=.=.=.|.=|");
+                            Console.WriteLine("             ;-.__-' _'  __.;/=.=.=.=.=.=/ ");
+                            Console.WriteLine("     ,     _'     `' =.      ;/.=.=.=.=/ ");
+                            Console.WriteLine("     )/.'`  ___     `'__     .;| .=.=.=/");
+                            Console.WriteLine("     (_/ .-`   ' .    |      //      /");
+                            Console.WriteLine("      ///         / -,|       |.--'  |");
+                            Console.WriteLine("     /  /`,       //    /      |  |   |");
+                            Console.WriteLine("    ( (__) )    __-'--,  /     |  |   '--,");
+                            Console.WriteLine("     ;---'   -'--,__}}}  /    '--,   __}}}");
+                            Console.WriteLine("       /________}}}       /____}}}");
                             //create a new instance of a sphinx. This will generate a riddle and answer property
                             Sphinxanswer sphinx = new Sphinxanswer();
                             Console.ForegroundColor = ConsoleColor.DarkCyan;
@@ -316,6 +374,9 @@ namespace Labyrinth
                             Combat.DoBattle(player, monster);
                             if (monster.Life <= 0)
                             {
+                                loot+= 5;
+                                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                                Console.WriteLine($"You loot the {monster.Name} and receive 5 gold.");
                                 Console.ForegroundColor = ConsoleColor.Green;
                                 Console.WriteLine($"\nYou killed the {monster.Name}! and are somehow magically transported to another room.");
                                 Console.ResetColor();
@@ -362,11 +423,11 @@ namespace Labyrinth
             //Show player how many monsters they defeated
             Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine("You defeated " + score + " monster" + (score == 1 ? "." : "s."));
+            Console.WriteLine("You collected " + loot + " gold in loot" + (loot == 1 ? "." : "s."));
             Console.WriteLine("You correctly answered " + correctRiddle + " riddle" + (correctRiddle == 1 ? "." : "s."));
             Console.WriteLine("You incorrectly answered " + wrongRiddle + " riddle" + (wrongRiddle == 1 ? "." : "s."));
             Console.ResetColor();
         }//end Main()
-
 
         private static string GetRoom()
         {
@@ -387,12 +448,18 @@ namespace Labyrinth
                "have been disguised by wood paneling, and the stone ceiling and floor are hidden by bright marble tiles. \nSeveral large and well-stuffed chairs are arranged about the room along with some small reading tables.",
             "This otherwise bare room has one distinguishing feature. \nThe stone around one of the other doors has been pulled over its edges, \nas though the rock were as soft as clay and could be moved with fingers. \nThe stone of the door and wall seems hastily molded together.",
             "A liquid-filled pit extends to every wall of this chamber. \nThe liquid lies about 10 feet below your feet and is so murky that you can't see its bottom. \nThe room smells sour. A rope bridge extends from your door to the room's other exit.",
-            "A crack in the ceiling above the middle of the north wall allows a trickle of water to flow down to the floor. \nThe water pools near the base of the wall, and a rivulet runs along the wall an out into the hall. \nThe water smells fresh."};
+            "A crack in the ceiling above the middle of the north wall allows a trickle of water to flow down to the floor. \nThe water pools near the base of the wall, and a rivulet runs along the wall an out into the hall. \nThe water smells fresh.",
+            "A huge stewpot hangs from a thick iron tripod over a crackling fire in the center of this chamber. A hole in the ceiling allows some of the smoke from the fire to escape, but much of it expands across the ceiling and rolls down to fill the room in a dark fog. Other details are difficult to make out, but some creature must be nearby, because it smells like a good soup is cooking.",
+            "You open the door, and the room comes alive with light and music. A sourceless, warm glow suffuses the chamber, and a harp you cannot see plays soothing sounds. Unfortunately, the rest of the chamber isn't so inviting. The floor is strewn with the smashed remains of rotting furniture. It looks like the room once held a bed, a desk, a chest, and a chair.",
+            "This room is hung with hundreds of dusty tapestries. All show signs of wear: moth holes, scorch marks, dark stains, and the damage of years of neglect. They hang on all the walls and hang from the ceiling to brush against the floor, blocking your view of the rest of the room.",
+            " A dozen statues stand or kneel in this room, and each one lacks a head and stands in a posture of action or defense. All are garbed for battle. It's difficult to tell for sure without their heads, but two appear to be dwarves, one might be an elf, six appear human, and the rest look like they might be orcs.",
+            "You peer into this room and spot the white orb of a skull lying on the floor. Suddenly a stone falls from the ceiling and smashes the skull to pieces. An instant later, another stone from the ceiling drops to strike the floor and shatter. You hear a low rumbling and cracking noise.",
+            "This chamber holds one occupant: the statue of a male figure with elven features but the broad, muscular body of a hale human. It kneels on the floor as though fallen to that posture. Both its arms reach upward in supplication, and its face is a mask of grief. Two great feathered wings droop from its back, both sculpted to look broken. The statue is skillfully crafted."
+            };
             Random rand = new Random();
             int indexNbr = rand.Next(rooms.Length);
             string room = rooms[indexNbr];
             return room;
         }//end method GetRoom()
-
     }//end class Labyrinth
 }//end Namespace
